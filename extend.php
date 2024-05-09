@@ -33,6 +33,4 @@ return [
     (new Extend\Settings)
         ->serializeToForum('darkFlarum', 'theme_dark_mode'),
     (new Extend\Locales(__DIR__ . '/locale')),
-    (new Extend\ServiceProvider())
-        ->register(Providers\AssetProvider::class),
 ];
