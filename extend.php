@@ -1,21 +1,24 @@
 <?php
 
 /**
- * Pallet theme for Flarum.
+ * Fork of Pallet theme for your forum. Original by Hasan Özbey.
  *
  * LICENSE: For the full copyright and license information,
  * please view the LICENSE.md file that was distributed
  * with this source code.
  *
- * @package    the-turk/flarum-pallet-theme
+ * @package    madeyedeer/flarum-pallet-theme
+ * @author     Adrian McCay <opensource@madeyedeer.com>
  * @author     Hasan Özbey <hasanoozbey@gmail.com>
- * @copyright  2020
+ * @copyright  2024 Adrian McCay
+ * @copyright  2020 Hasan Özbey
  * @license    The MIT License
- * @version    Release: 0.1.0-beta.4
+ * @version    Release: 0.2.0
+ * @link       https://github.com/MadEyeDeer/flarum-pallet-theme
  * @link       https://github.com/the-turk/flarum-pallet-theme
  */
 
-namespace TheTurk\Pallet;
+namespace MadEyeDeer\Pallet;
 
 use Flarum\Extend;
 

@@ -1,6 +1,6 @@
 {
-  "name": "the-turk/flarum-pallet-theme",
-  "description": "Pallet theme for your forum.",
+  "name": "madeyedeer/flarum-pallet-theme",
+  "description": "Fork of Pallet theme for your forum. Original by Hasan Özbey.",
   "keywords": [
     "flarum",
     "theme",
@@ -8,14 +8,21 @@
   ],
   "type": "flarum-extension",
   "license": "MIT",
-  "authors": [{
-    "name": "Hasan Özbey",
-    "email": "hasanoozbey@gmail.com",
-    "homepage": "https://github.com/the-turk"
-  }],
+  "authors": [
+    {
+      "name": "Adrian McCay",
+      "email": "opensource@madeyedeer.com",
+      "homepage": "https://madeyedeer.com"
+    },
+    {
+      "name": "Hasan Özbey",
+      "email": "hasanoozbey@gmail.com",
+      "homepage": "https://github.com/the-turk"
+    }
+  ],
   "support": {
-    "issues": "https://github.com/the-turk/flarum-pallet-theme/issues",
-    "source": "https://github.com/the-turk/flarum-pallet-theme"
+    "issues": "https://github.com/MadEyeDeer/flarum-pallet-theme/issues",
+    "source": "https://github.com/MadEyeDeer/flarum-pallet-theme"
   },
   "require": {
     "flarum/core": "^1.0.2",
@@ -26,7 +33,7 @@
   },
   "autoload": {
     "psr-4": {
-      "TheTurk\\Pallet\\": "src/"
+      "MadEyeDeer\\Pallet\\": "src/"
     }
   },
   "extra": {

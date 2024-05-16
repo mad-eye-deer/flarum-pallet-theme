@@ -50,8 +50,8 @@ export default class Sidebar extends Component {
               ]
             : [
                 <div className="guest">
-                  <h4 className="guestGreeting">{app.translator.trans('the-turk-pallet-theme.forum.howdy')}</h4>
-                  <p className="guestMessage">{app.translator.trans('the-turk-pallet-theme.forum.involve')}</p>
+                  <h4 className="guestGreeting">{app.translator.trans('madeyedeer-pallet-theme.forum.howdy')}</h4>
+                  <p className="guestMessage">{app.translator.trans('madeyedeer-pallet-theme.forum.involve')}</p>
                   <div className="guestButtons">{this.sessionItems().toArray()}</div>
                 </div>,
               ]}

@@ -37,9 +37,9 @@ function hexToRgb(hex) {
   return result ? parseInt(result[1], 16) + ',' + parseInt(result[2], 16) + ',' + parseInt(result[3], 16) : null;
 }
 
-app.initializers.add('the-turk-pallet-theme', () => {
+app.initializers.add('madeyedeer-pallet-theme', () => {
   if (!app.initializers.has('flarum-tags')) {
-    console.error('[the-turk/flarum-pallet-theme] flarum/tags is not enabled');
+    console.error('[madeyedeer/flarum-pallet-theme] flarum/tags is not enabled');
     return;
   }
 
