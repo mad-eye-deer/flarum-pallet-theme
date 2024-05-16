@@ -1,8 +1,11 @@
+@left-column: 280px;
+@screen-desktop: 992px + @left-column;
+
 .App-content {
 	border: 0;
 
 	@media @desktop-up {
-		padding-left: 280px;
+		padding-left: @left-column;
 	}
 }
 

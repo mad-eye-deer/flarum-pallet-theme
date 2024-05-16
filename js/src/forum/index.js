@@ -43,22 +43,6 @@ app.initializers.add('the-turk-pallet-theme', () => {
     return;
   }
 
-  extend(DiscussionHero.prototype, 'view', function (view) {
-    if (app.forum.attribute('darkFlarum') == false) return;
-
-    const tags = sortTags(this.attrs.discussion.tags());
-
-    if (tags && tags.length) {
-      const color = tags[0].color();
-
-      if (color) {
-        view.attrs.style = {
-          backgroundColor: 'rgba(' + hexToRgb(color) + ', 0.6)',
-        };
-      }
-    }
-  });
-
   extend(DiscussionListItem.prototype, 'oncreate', (out, vnode) => {
     var $discussionItem = $(vnode.dom).find('.DiscussionListItem-content');
     var $sticky = $discussionItem.find('.item-sticky');
@@ -183,15 +167,6 @@ app.initializers.add('the-turk-pallet-theme', () => {
         </div>
       </div>
     );
-  });
-
-  extend(TagHero.prototype, 'view', function (view) {
-    if (app.forum.attribute('darkFlarum') == false) return;
-
-    const tag = this.attrs.model;
-    const color = tag.color();
-
-    view.attrs.style = color ? { color: '#fff', backgroundColor: 'rgba(' + hexToRgb(color) + ', 0.6)' } : '';
   });
 
   override(TagsPage.prototype, 'view', function () {

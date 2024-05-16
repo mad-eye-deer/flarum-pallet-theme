@@ -24,9 +24,6 @@
   "suggest": {
     "ianm/synopsis": "Give more volume to the discussion list."
   },
-  "conflict": {
-    "fof/nightmode": ">=0.1.0"
-  },
   "autoload": {
     "psr-4": {
       "TheTurk\\Pallet\\": "src/"
