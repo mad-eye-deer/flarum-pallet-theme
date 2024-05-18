@@ -193,7 +193,9 @@ app.initializers.add('madeyedeer-pallet-theme', () => {
                     <div className="TagItem-borderLine" style={'border-color: rgba(' + hexToRgb(tag.color()) + ', 0.5)'}></div>
                     <div className="TagItem-col">
                       <div className="TagItem-infoContainer">
-                        <div className="TagItem-icon">{tag.icon() && tagIcon(tag, { className: 'fa-3x' }, { useColor: false })}</div>
+                        {tag.icon() && (
+                          <div className="TagItem-icon">{tag.icon() && tagIcon(tag, { className: 'fa-3x' }, { useColor: false })}</div>
+                        )}
                         <div className="TagItem-info">
                           <Link href={app.route.tag(tag)}>
                             <span className="TagItem-title">{tag.name()}</span>
