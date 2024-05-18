@@ -1,46 +1,47 @@
 # Pallet Theme for Flarum
 
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/the-turk/flarum-pallet-theme/blob/master/LICENSE) [![Latest Stable Version](https://img.shields.io/packagist/v/the-turk/flarum-pallet-theme.svg)](https://packagist.org/packages/the-turk/flarum-pallet-theme) [![Total Downloads](https://img.shields.io/packagist/dt/the-turk/flarum-pallet-theme.svg)](https://packagist.org/packages/the-turk/flarum-pallet-theme)
+[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MadEyeDeer/flarum-pallet-theme/blob/main/LICENSE) [![Latest Stable Version](https://img.shields.io/packagist/v/madeyedeer/flarum-pallet-theme.svg)](https://packagist.org/packages/madeyedeer/flarum-pallet-theme) [![Total Downloads](https://img.shields.io/packagist/dt/madeyedeer/flarum-pallet-theme.svg)](https://packagist.org/packages/madeyedeer/flarum-pallet-theme) [![](https://img.shields.io/static/v1?label=sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/adrianmccay) ![Static Badge](https://img.shields.io/badge/flarum-1.8.5-%23e7672e?logo=flarum)
 
 ![Light Pallet](https://i.imgur.com/EBPARGE.png)
-
-What's up! I've been stalking the discuss since when they gave me 3 months vacation from where I work. This theme was one of my unreleased works (which still feels like far from finished) before I got that job and took me couple of hours to update it for the stable release.
-
-_There are some breakthrough changes for the Tags extension with this and I'm still unfamiliar with the stable Flarum release so let's stick with the Dev tag for a while._
-
-Introducing experimental tags navigation...
-
 ![Dark Pallet - Tags Navigation](https://i.imgur.com/XE0xdu6.gif)
 
-When you head into a tag's discussion list, only that tag's children and secondary tags will be shown in the **affixed** sidebar. Main purpose of this idea is to create a tag-focused user experience.
 
-It can be used with dark & light modes but sadly, it doesn't work with the [Night Mode by FriendsOfFlarum](https://discuss.flarum.org/d/21492-friendsofflarum-night-mode) at the moment.
+## Welcome to the Pallet Theme!
 
-_This extension is under **minimal maintenance** (or maybe no maintenance at all ??)._
+Originally created by [the-turk](https://github.com/the-turk/flarum-pallet-theme), this theme offers a beautiful and dynamic user interface for your Flarum forum. With the original author unable to maintain it, I have taken over the development to ensure it remains compatible with the latest Flarum updates.
+
+-- [Adrian](https://github.co/adrianmccay)
+
+## How to remove the original theme
+
+If you have the original Pallet Theme installed, you'll need to remove it first. Just run this command:
+
+```bash
+composer remove the-turk/flarum-pallet-theme
+```
 
 ## Installation
 
-```bash
-composer require "the-turk/flarum-pallet-theme:0.1.0-beta.4"
+To install the Pallet Theme, use Composer:
+``` bash
+composer require madeyedeer/flarum-pallet-theme
 ```
 
-## Recommendations
+## Updating
 
-It's best to use this theme with the following extensions:
-
-1. [Synopsis](https://discuss.flarum.org/d/25772-synopsis) by [IanM](https://discuss.flarum.org/u/ianm)
-
+To update the Pallet Theme, use Composer:
 ```bash
-composer require ianm/synopsis
+composer update madeyedeer/flarum-pallet-theme
 ```
+> Note: Some releases may require a version to be specified when updating, so check the release notes on the [Flarum forum](https://discuss.flarum.org/d/34569-pallet-theme-new) for specific instructions.
 
-## Known Issues
 
-When you start browsing from the "Tags" page, tag listing will mixed up which I believe due to a bug in [flarum/tags](https://github.com/flarum/tags/pull/134#issuecomment-861665957) -- haven't taken a deeper look into this.
+## About Maintenance
+The Pallet Theme will continue to be maintained to ensure compatibility with Flarum. Please report any issues, especially those related to compatibility with other extensions, on the [GitHub issues page](https://github.com/MadEyeDeer/flarum-pallet-theme/issues).
 
 ## Links
-
-- [Source code on GitHub](https://github.com/the-turk/flarum-pallet-theme)
-- [Changelog](https://github.com/the-turk/flarum-pallet-theme/blob/master/CHANGELOG.md)
-- [Report an issue](https://github.com/the-turk/flarum-pallet-theme/issues)
-- [Download via Packagist](https://packagist.org/packages/the-turk/flarum-pallet-theme)
+- [Packagist](https://packagist.org/packages/madeyedeer/flarum-pallet-theme)
+- [GitHub](https://github.com/MadEyeDeer/flarum-pallet-theme)
+- [Discuss](https://discuss.flarum.org/d/34569-pallet-theme-new)
+- [Original Theme](https://github.com/the-turk/flarum-pallet-theme)
+- [Original Discussion](https://discuss.flarum.org/d/27757-pallet-theme)
