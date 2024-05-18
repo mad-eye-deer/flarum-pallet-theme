@@ -10,7 +10,7 @@
 
 Originally created by [the-turk](https://github.com/the-turk/flarum-pallet-theme), this theme offers a beautiful and dynamic user interface for your Flarum forum. With the original author unable to maintain it, I have taken over the development to ensure it remains compatible with the latest Flarum updates.
 
--- [Adrian](https://github.co/adrianmccay)
+-- [Adrian](https://github.com/adrianmccay)
 
 ## How to remove the original theme
 
