@@ -1,0 +1,49 @@
+name: Bug report
+description: Please fill out the sections below to help us reproduce and investigate the bug. Fill in as much detail as possible, but feel free to skip any sections that aren't relevant.
+labels: ['bug']
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered ([issues](https://github.com/MadEyeDeer/flarum-pallet-theme/issues))
+      options:
+        - label: I have searched the existing issues and this is a new issue
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Description
+      description: A clear and concise description of what the bug is.
+
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        e.g.
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+
+  - type: textarea
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem. Get as much context as possible and take screenshots of the entire browser window rather than just the area of the page that's broken. You can drag and drop images here.
+      placeholder: |
+        Drag and drop images here.
+
+  - type: textarea
+    attributes:
+      label: Browser console/network errors
+      description: If applicable, please include any errors or messages from the browser console or network requests. Copy and paste from the browser console or add screenshots if that's easier.
+
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here.

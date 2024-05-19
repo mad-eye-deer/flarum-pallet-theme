@@ -1,0 +1,43 @@
+name: Feature request
+description: Suggest an idea for this project by filling out the sections below. Provide as much detail as possible to help us understand and consider your suggestion.
+labels: ['enhancement', 'feature request']
+body:
+  - type: checkboxes
+    attributes:
+      label: Is there an existing request for this feature?
+      description: Please search to see if a similar feature request already exists ([issues](https://github.com/MadEyeDeer/flarum-pallet-theme/issues)).
+      options:
+        - label: I have searched the existing issues and this is a new request
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Problem description
+      description: A clear and concise description of what the problem is. For example, "I'm always frustrated when [...]".
+
+  - type: textarea
+    attributes:
+      label: Desired solution
+      description: A clear and concise description of what you want to happen. If possible, describe it as a user story (e.g., "As a [type of user], I want [a feature] so that [benefit].").
+
+  - type: textarea
+    attributes:
+      label: Alternatives considered
+      description: A clear and concise description of any alternative solutions or features you've considered.
+
+  - type: textarea
+    attributes:
+      label: Impact on usage
+      description: Describe how this feature would improve your workflow or application usage.
+
+  - type: textarea
+    attributes:
+      label: Assets
+      description: If applicable, add diagrams, annotated screenshots, or other assets to help explain your feature request. You can drag and drop images/files here.
+      placeholder: |
+        Drag and drop images/files here.
+
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Add any other context or screenshots about the feature request here.
