@@ -2,8 +2,6 @@ import { extend, override } from 'flarum/common/extend';
 
 import app from 'flarum/common/app';
 import AffixedSidebar from 'flarum/forum/components/AffixedSidebar';
-import Button from 'flarum/common/components/Button';
-import DiscussionHero from 'flarum/components/DiscussionHero';
 import DiscussionList from 'flarum/forum/components/DiscussionList';
 import DiscussionListItem from 'flarum/components/DiscussionListItem';
 import DiscussionPage from 'flarum/forum/components/DiscussionPage';
@@ -13,7 +11,6 @@ import IndexPage from 'flarum/components/IndexPage';
 import Link from 'flarum/components/Link';
 import LoadingIndicator from 'flarum/components/LoadingIndicator';
 import Sidebar from './components/Sidebar';
-import TagHero from 'flarum/tags/components/TagHero';
 import TagLinkButton from 'flarum/tags/components/TagLinkButton';
 import TagsPage from 'flarum/tags/components/TagsPage';
 
@@ -72,24 +69,9 @@ app.initializers.add('madeyedeer-pallet-theme', () => {
   });
 
   extend(HeaderSecondary.prototype, 'items', function (items) {
-    const canStartDiscussion = app.forum.attribute('canStartDiscussion') || !app.session.user;
-
-    items.add(
-      'newDiscussion',
-      Button.component(
-        {
-          icon: 'fas fa-edit',
-          className: 'Button Button--primary IndexPage-newDiscussion Button--header',
-          itemClassName: 'App-primaryControl',
-          onclick: () => {
-            return IndexPage.prototype.newDiscussionAction().catch(() => {});
-          },
-          disabled: !canStartDiscussion,
-        },
-        app.translator.trans(canStartDiscussion ? 'core.forum.index.start_discussion_button' : 'core.forum.index.cannot_start_discussion_button')
-      ),
-      19
-    );
+    const indexPage = new IndexPage();
+    const newDiscussion = indexPage.sidebarItems().get('newDiscussion');
+    items.add('newDiscussion', newDiscussion, 19);
   });
 
   extend(IndexPage.prototype, 'oncreate', function (out, vnode) {

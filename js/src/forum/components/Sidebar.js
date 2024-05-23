@@ -1,5 +1,6 @@
 import Button from 'flarum/common/components/Button';
 import Component from 'flarum/common/Component';
+import IndexPage from 'flarum/forum/components/IndexPage';
 import ItemList from 'flarum/common/utils/ItemList';
 import LinkButton from 'flarum/common/components/LinkButton';
 import LogInModal from 'flarum/common/components/LogInModal';
@@ -17,6 +18,10 @@ import listItems from 'flarum/common/helpers/listItems';
 export default class Sidebar extends Component {
   view() {
     const user = app.session.user;
+    if (app.forum.attribute('showSideNavToGuests') === false && !user) return;
+
+    const indexPage = new IndexPage();
+    const navItems = indexPage.navItems();
 
     return (
       <div class="App-sidebar-container">
@@ -59,7 +64,7 @@ export default class Sidebar extends Component {
         <div class="App-sidebar-items">
           <div class="App-sidebar-items-container">
             <ul>
-              {listItems(this.items().toArray())}
+              {listItems(navItems.toArray())}
               {user ? listItems(this.sessionItems().toArray()) : ''}
             </ul>
           </div>
@@ -78,6 +83,8 @@ export default class Sidebar extends Component {
     const user = app.session.user;
 
     if (user) {
+      items.add('separator-top', Separator.component(), 50);
+
       items.add(
         'profile',
         LinkButton.component(
@@ -155,144 +162,6 @@ export default class Sidebar extends Component {
           app.translator.trans('core.forum.header.log_in_link')
         ),
         10
-      );
-    }
-
-    return items;
-  }
-
-  /**
-   * Build an item list for navigation.
-   *
-   * @return {ItemList}
-   */
-  items() {
-    const items = new ItemList();
-    const params = app.search.stickyParams();
-    const user = app.session.user;
-
-    items.add(
-      'allDiscussions',
-      LinkButton.component(
-        {
-          href: app.route('index', params),
-          icon: 'far fa-comments',
-        },
-        app.translator.trans('core.forum.index.all_discussions_link')
-      ),
-      40
-    );
-
-    // ext: v17development/flarum-blog
-    if (app.forum.attribute('blogAddSidebarNav') && app.forum.attribute('blogAddSidebarNav') !== '0') {
-      items.add(
-        'blog',
-        <LinkButton icon="fas fa-comment" href={app.route('blog')}>
-          {app.translator.trans('v17development-flarum-blog.forum.blog')}
-        </LinkButton>,
-        39
-      );
-    }
-
-    items.add(
-      'tags',
-      <LinkButton icon="fas fa-th-large" href={app.route('tags')}>
-        {app.translator.trans('flarum-tags.forum.index.tags_link')}
-      </LinkButton>,
-      20
-    );
-
-    // ext: justoverclock/flarum-ext-keywords
-    if (app.initializers.has('justoverclock/flarum-ext-keywords')) {
-      items.add(
-        'Glossary',
-        <LinkButton href={app.route('GlossaryPage')} icon="fas fa-atlas">
-          {app.translator.trans('flarum-ext-keywords.forum.title')}
-        </LinkButton>,
-        21
-      );
-    }
-
-    // ext: fof/byobu
-    if (app.initializers.has('askvortsov/flarum-categories')) {
-      items.add(
-        'categories',
-        <LinkButton icon="fas fa-th-list" href={app.route('categories')}>
-          {app.translator.trans('askvortsov-categories.forum.index.categories_link')}
-        </LinkButton>,
-        22
-      );
-    }
-
-    // ext: clarkwinkelmann/flarum-ext-group-list
-    if (app.forum.attribute('clarkwinkelmann-group-list.showSideNavLink')) {
-      items.add(
-        'clarkwinkelmann-group-list-item',
-        LinkButton.component(
-          {
-            href: app.route('clarkwinkelmann-group-list'),
-            icon: 'fas fa-users',
-          },
-          app.translator.trans('clarkwinkelmann-group-list.forum.nav')
-        ),
-        23
-      );
-    }
-
-    // ext: fof/user-directory
-    if (app.forum.attribute('canSeeUserDirectoryLink')) {
-      items.add(
-        'fof-user-directory',
-        LinkButton.component(
-          {
-            href: app.route('fof_user_directory'),
-            icon: 'far fa-address-book',
-          },
-          app.translator.trans('fof-user-directory.forum.page.nav')
-        ),
-        24
-      );
-    }
-
-    if (user) {
-      // ext: fof/byobu
-      if (app.initializers.has('fof-byobu')) {
-        items.add(
-          'privateDiscussions',
-          LinkButton.component(
-            {
-              icon: app.forum.data.attributes['byobu.icon-badge'],
-              href: app.route('byobuPrivate'),
-            },
-            app.translator.trans('fof-byobu.forum.nav.nav_item')
-          ),
-          29
-        );
-      }
-
-      items.add(
-        'following',
-        LinkButton.component(
-          {
-            href: app.route('following', params),
-            icon: 'fas fa-star',
-          },
-          app.translator.trans('flarum-subscriptions.forum.index.following_link')
-        ),
-        30
-      );
-
-      items.add('separator', Separator.component(), 10);
-    }
-
-    // ext: justoverclock/flarum-ext-contactme
-    if (app.initializers.has('justoverclock/flarum-ext-contactme')) {
-      items.add(
-        'contactPage',
-        <LinkButton href={app.route('contactPage')} icon="fas fa-at">
-          {app.translator.trans('flarum-ext-contactme.forum.title')}
-        </LinkButton>,
-        8
       );
     }
 
