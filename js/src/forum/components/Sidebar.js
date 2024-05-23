@@ -18,6 +18,7 @@ import listItems from 'flarum/common/helpers/listItems';
 export default class Sidebar extends Component {
   view() {
     const user = app.session.user;
+    if (app.forum.attribute('showSideNavToGuests') === false && !user) return;
 
     const indexPage = new IndexPage();
     const navItems = indexPage.navItems();

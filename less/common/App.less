@@ -1,4 +1,11 @@
-@left-column: 280px;
+.set-left-column(@show-side-nav);
+.set-left-column(true) {
+	@left-column: 280px;
+}
+.set-left-column(false) {
+	@left-column: 0;
+}
+
 @screen-desktop: 992px + @left-column;
 
 .App-content {
@@ -67,7 +74,7 @@
 	left: 0;
 	top: 52px;
 	bottom: 0;
-	width: 280px;
+	width: @left-column;
 	border-right: 1px solid #e8e8e8;
 	background: #fafafa;
 

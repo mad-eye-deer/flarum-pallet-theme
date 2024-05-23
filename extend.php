@@ -21,6 +21,7 @@
 namespace MadEyeDeer\Pallet;
 
 use Flarum\Extend;
+use MadEyeDeer\Pallet\Middleware\PalletThemeMiddleware;
 
 return [
     (new Extend\Frontend('admin'))
@@ -30,4 +31,12 @@ return [
         ->js(__DIR__ . '/js/dist/forum.js')
         ->css(__DIR__ . '/less/forum.less'),
     (new Extend\Locales(__DIR__ . '/locale')),
+
+    (new Extend\Settings())
+        ->default('madeyedeer-pallet-theme.show_side_nav_to_guests', true)
+        ->serializeToForum('showSideNavToGuests', 'madeyedeer-pallet-theme.show_side_nav_to_guests', 'boolval'),
+
+    (new Extend\Middleware('forum'))
+        ->add(PalletThemeMiddleware::class),
+
 ];
