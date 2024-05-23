@@ -2,7 +2,7 @@
   "name": "@madeyedeer/flarum-pallet-theme",
   "description": "Fork of Pallet theme for your forum. Original by Hasan Özbey.",
   "license": "MIT",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "dependencies": {
     "flarum-webpack-config": "0.1.0-beta.16.2",
     "webpack": "^4.46.0",
