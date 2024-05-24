@@ -1,3 +1,4 @@
+@show-side-nav: true;
 .set-left-column(@show-side-nav);
 .set-left-column(true) {
 	@left-column: 280px;
@@ -258,11 +259,15 @@
 				padding: 0;
 				list-style: none;
 			}
-		
+
+			li[class^="item-navTag"] {
+				display: none; /* Hide li elements that have a class starting with "item-navTag" */
+			}
+
 			li {
 				padding: 14px 40px;
 				border-left: 4px solid transparent;
-	
+
 				&.separator {
 					margin: 15px 30px;
 					padding: 0;
@@ -273,7 +278,11 @@
 						border-color: #2a3346;
 					}
 				}
-	
+
+				&.Dropdown-separator {
+					display: none;
+				}
+
 				& a {
 					display: flex;
 					align-items: center;

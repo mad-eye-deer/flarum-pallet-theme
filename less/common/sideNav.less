@@ -11,17 +11,13 @@
       margin-left: 0;
     }
 
-    .item-allDiscussions, 
-    .item-following, 
-    .item-tags,
-    .item-fof-user-directory,
-    .item-clarkwinkelmann-group-list-item,
-    .item-privateDiscussions,
-    .item-categories,
-    .item-blog,
-    .item-contactPage,
-    .item-Glossary {
-      display: none;
+    .Dropdown-menu {
+      li {
+        display: none; /* Hide all li elements by default */
+        &[class^="item-navTag"] {
+          display: list-item; /* Show li elements that have a class starting with "item-navTag" */
+        }
+      }
     }
 
     .Dropdown--select .Dropdown-menu  {
