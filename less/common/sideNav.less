@@ -11,11 +11,14 @@
       margin-left: 0;
     }
 
-    .Dropdown-menu {
-      li {
-        display: none; /* Hide all li elements by default */
-        &[class^="item-navTag"] {
-          display: list-item; /* Show li elements that have a class starting with "item-navTag" */
+    &:not(.UserPage-nav) {
+      .Dropdown-menu {
+        li {
+          display: none; /* Hide all li elements by default */
+
+          &[class^="item-navTag"] {
+            display: list-item; /* Show li elements that have a class starting with "item-navTag" */
+          }
         }
       }
     }
