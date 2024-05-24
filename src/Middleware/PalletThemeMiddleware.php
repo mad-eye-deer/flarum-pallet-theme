@@ -9,6 +9,9 @@ use Psr\Http\Message\ResponseInterface;
 use Illuminate\Contracts\Container\Container;
 use Flarum\Settings\SettingsRepositoryInterface;
 
+use Flarum\Frontend\Assets;
+use Flarum\Frontend\Compiler\Source\SourceCollector;
+
 class PalletThemeMiddleware implements MiddlewareInterface
 {
     protected Container $container;
@@ -24,12 +27,14 @@ class PalletThemeMiddleware implements MiddlewareInterface
         $actor = $request->getAttribute('actor');
         $isGuest = $actor ? $actor->isGuest() : true;
         $showSideNavToGuests = $settings->get('madeyedeer-pallet-theme.show_side_nav_to_guests');
+        $showSideNav = ($showSideNavToGuests == '1' || !$isGuest) ? 'true' : 'false';
 
-        $this->container->extend('flarum.less.custom_variables', function ($variables) use ($isGuest, $showSideNavToGuests) {
-            $variables['show-side-nav'] = function() use ($showSideNavToGuests, $isGuest){
-                return ($showSideNavToGuests == '1' || !$isGuest) ? 'true' : 'false';
-            };
-            return $variables;
+        $this->container->resolving('flarum.assets.forum', function (Assets $assets) use ($showSideNav) {
+            $assets->css(function (SourceCollector $sources) use ($showSideNav) {
+                $sources->addString(function () use ($showSideNav) {
+                    return "@show-side-nav: {$showSideNav};";
+                });
+            });
         });
 
         return $handler->handle($request);
