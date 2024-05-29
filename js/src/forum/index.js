@@ -59,6 +59,12 @@ app.initializers.add('madeyedeer-pallet-theme', () => {
   });
 
   extend(ForumApplication.prototype, 'mount', () => {
+    const user = app.session.user;
+    if (app.forum.attribute('showSideNavToGuests') === false && !user) {
+      document.querySelector('.App-content').style.marginLeft = '0';
+      return;
+    }
+
     const header = document.getElementById('header-primary');
     const sidebarContainer = document.createElement('div');
 
