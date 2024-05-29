@@ -1,19 +1,11 @@
-@show-side-nav: true;
-.set-left-column(@show-side-nav);
-.set-left-column(true) {
-	@left-column: 280px;
-}
-.set-left-column(false) {
-	@left-column: 0;
-}
-
+@left-column: 280px;
 @screen-desktop: 992px + @left-column;
 
 .App-content {
 	border: 0;
 
 	@media @desktop-up {
-		padding-left: @left-column;
+		margin-left: @left-column;
 	}
 }
 
