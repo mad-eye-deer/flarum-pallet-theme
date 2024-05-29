@@ -32,6 +32,8 @@ composer require madeyedeer/flarum-pallet-theme
 To update the Pallet Theme, use Composer:
 ```bash
 composer update madeyedeer/flarum-pallet-theme
+php flarum migrate
+php flarum cache:clear
 ```
 > Note: Some releases may require a version to be specified when updating, so check the release notes on the [Flarum forum](https://discuss.flarum.org/d/34569-pallet-theme-new) for specific instructions.
 
