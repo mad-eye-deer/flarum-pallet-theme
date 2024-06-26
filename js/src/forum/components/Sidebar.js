@@ -35,7 +35,7 @@ export default class Sidebar extends Component {
                       <ul className="badges">{listItems(user.badges().toArray())}</ul>
                     </div>
                   </div>
-                  <h4>{user.username()}</h4>
+                  <h4>{user.displayName()}</h4>
                   <p>
                     {app.translator.trans('core.forum.user.joined_date_text', {
                       ago: humanTime(user.joinTime()),
