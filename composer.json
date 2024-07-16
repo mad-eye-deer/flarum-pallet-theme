@@ -39,6 +39,7 @@
   "extra": {
     "flarum-extension": {
       "title": "Pallet Theme",
+      "category": "theme",
       "icon": {
         "name": "fas fa-pallet",
         "backgroundColor": "#b72a2a",
